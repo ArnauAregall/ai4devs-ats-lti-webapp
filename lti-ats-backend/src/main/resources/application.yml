@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/lti_ats}
+    username: ${SPRING_DATASOURCE_USERNAME:lti_ats}
+    password: ${SPRING_DATASOURCE_PASSWORD:lti_ats}
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
